@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { Button, Form } from "react-bootstrap";
+import Blue from './pages/Blue';
+import Red from './pages/Red';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
+import Landing from "./pages/Landing";
+import AnimatedRoutes from "./pages/AnimatedRoutes";
 
-function App() {
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AnimatedRoutes />
+    </Router>
   );
 }
-
-export default App;
