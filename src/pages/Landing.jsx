@@ -2,42 +2,68 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from "react-router-dom";
 import styles from './Landing.module.css'
-import { Box, Flex, Stack, Text, useMediaQuery } from "@chakra-ui/react"
-
+import { Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack } from "@chakra-ui/react"
+import image from '../assets/100711443.jpg'
 
 const Landing = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
     return (
         // <AnimatePresence>
-            <motion.div
+        <motion.div
             key={2}
-            initial={{y:-1000, opacity: 0}}
-            animate={{ y: 10, opacity: 1}}
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 10, opacity: 1 }}
             transition={{ type: "spring", stiffness: 75 }}
-                // key={2}
-                // initial={{opacity: 0}}
-                // animate={{opacity: 1 }}
-                // exit={{opacity: 0}}
-            >
 
-                <Stack>
-                    <Flex direction={isNotSmallerScreen ? "row" : "column"}
-                        spacing="200px" p={isNotSmallerScreen ? "32" : "0"}
-                        alignSelf="flex-start">
-                        <Box mt={isNotSmallerScreen ? "0" : "16"} align="flex-start">
-                            <Text fontSize='5xl' fontWeigth='semibold'>Hi, I'm</Text>
-                            <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
-                            <Text fontSize='2xl' color='gray.500'>Full Stack Web Developer</Text>
-                            <Link to='/blue'>
-                                <button>blue</button>
-                            </Link>
-                            <Link to='/red'>
-                                <button>red</button>
-                            </Link>
-                        </Box>
-                    </Flex>
-                </Stack>
-            </motion.div>
+        >
+
+            <Stack>
+            
+                <Flex direction={isNotSmallerScreen ? "row" : "column"}
+                    spacing="200px" p={isNotSmallerScreen ? "32" : "0"}
+                    alignSelf="center">
+                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="flex-start">
+                        <Text fontSize='5xl' fontWeigth='semibold'>Hi, I'm</Text>
+
+                        
+                        <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
+                        
+
+                        <Text  color='gray.500'>Full Stack Web Developer</Text>
+                        <Button >Hire me</Button>
+                        <Link to='/blue'>
+                            <button>blue</button>
+                        </Link>
+                        <Link to='/red'>
+                            <button>red</button>
+                        </Link>
+                    </Box>
+
+                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "32" : '0'}>
+                    <Image
+                        src={image}
+                        alignSelf="center"
+                        mb={isNotSmallerScreen ? "0" : "12"}
+                        borderRadius="full"
+                        boxShadow="1g"
+                        backgroundColor="transparent"
+                        boxSize="200px"
+                        position="absolute"
+                        zIndex={99}
+                    />
+                    <Circle  bg="blue.100" opacity="0.7"
+                        w="200px" h="200px" alignItems="flex-end" m={'2'}
+                    />
+                    
+                    </Box>
+                    
+                    
+
+                </Flex>
+                
+            </Stack>
+            
+        </motion.div>
         // </AnimatePresence>
     )
 }
