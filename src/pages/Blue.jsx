@@ -1,37 +1,80 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import styles from './Blue.module.css'
-import { Box, Flex, Stack, Text, useMediaQuery } from "@chakra-ui/react"
-
+import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image } from "@chakra-ui/react"
+import mooncinemaimg from '../assets/moon-cinema-0.jpg'
+import appetiteimg from '../assets/pi-foods-1.jpg'
+import weatherappimg from '../assets/weatherappimg.png'
 const Blue = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
 
-        return (
-            <motion.div 
+    return (
+        <motion.div
             key={1}
-            initial={{y:-1000, opacity: 0}}
-            animate={{ y: 10, opacity: 1}}
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 10, opacity: 1 }}
             transition={{ type: "spring", stiffness: 75 }}
-            >
-                    <Stack>
+        >
+            <Stack>
+                <Flex alignSelf='center'>
+                    <Link to='/'>
+                        <Button>My bio</Button>
+                    </Link>
+                </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
-                    spacing="200px" p={isNotSmallerScreen ? "32" : "0"}
+                    spacing="200px" p={isNotSmallerScreen ? "6" : "0"}
                     alignSelf="flex-start">
-                        <Box mt={isNotSmallerScreen? "0" : "16"} align="flex-start">
-                            <Text fontSize='5xl' fontWeigth='semibold'>Texto de ejemplo</Text>
-                            <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Lorem ipsum dolor</Text>
-                            <Text fontSize='2xl'  color='gray.500'>sit amet porro meme ricca</Text>
-                            <Link to='/'>
-                        <button>landing</button>
-                        </Link>
-                        <Link to='/red'>
-                        <button>red</button>
-                        </Link>
-                        </Box>
+                    <Text fontSize='4xl' fontWeigth='semibold'>Check out my </Text>
+                    <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> latest projects</Text>
+                </Flex>
+                <Tabs align='center'>
+                    <TabList>
+                        <Tab>Moon Cinema</Tab>
+                        <Tab>APPetite</Tab>
+                        <Tab>Weather App</Tab>
+                    </TabList>
+
+                    <TabPanels>
+                        <TabPanel>
+                            <Flex justifyContent="center">
+                                <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
+                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> Moon Cinema</Text>
+                            </Flex>
+                            <Image
+                                src={mooncinemaimg}
+                                alignSelf="center"
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                        <Flex justifyContent="center">
+                                <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
+                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> APPetite</Text>
+                            </Flex>
+                            <Image
+                                src={appetiteimg}
+                                alignSelf="center"
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                        <Flex justifyContent="center">
+                                <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
+                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> Weather App</Text>
+                            </Flex>
+                            <Image
+                                src={weatherappimg}
+                                alignSelf="center"
+                            />
+                        </TabPanel>
+                    </TabPanels>
+                </Tabs>
+                <Flex alignSelf='center'>
+                    <Link to='/red'>
+                        <Button m='2'>Contact</Button>
+                    </Link>
                 </Flex>
             </Stack>
-            </motion.div>
-        )
-    }
+        </motion.div>
+    )
+}
 export default Blue;

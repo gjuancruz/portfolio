@@ -18,51 +18,54 @@ const Landing = () => {
         >
 
             <Stack>
-            
+
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
                     spacing="200px" p={isNotSmallerScreen ? "32" : "0"}
-                    alignSelf="center">
+                    alignSelf="flex-start">
                     <Box mt={isNotSmallerScreen ? "0" : "16"} align="flex-start">
-                        <Text fontSize='5xl' fontWeigth='semibold'>Hi, I'm</Text>
+                        <Text fontSize='5xl' fontWeigth='semibold'>Hey there! I'm</Text>
 
-                        
+
                         <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
-                        
 
-                        <Text  color='gray.500'>Full Stack Web Developer</Text>
+
+                        <Text color='gray.500'>Full Stack Web Developer</Text>
                         <Button >Hire me</Button>
-                        <Link to='/blue'>
+                        {/* <Link to='/blue'>
                             <button>blue</button>
                         </Link>
                         <Link to='/red'>
                             <button>red</button>
-                        </Link>
+                        </Link> */}
                     </Box>
 
                     <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "32" : '0'}>
-                    <Image
-                        src={image}
-                        alignSelf="center"
-                        mb={isNotSmallerScreen ? "0" : "12"}
-                        borderRadius="full"
-                        boxShadow="1g"
-                        backgroundColor="transparent"
-                        boxSize="200px"
-                        position="absolute"
-                        zIndex={99}
-                    />
-                    <Circle  bg="blue.100" opacity="0.7"
-                        w="200px" h="200px" alignItems="flex-end" m={'2'}
-                    />
-                    
+                        <Image
+                            src={image}
+                            alignSelf="center"
+                            mb={isNotSmallerScreen ? "0" : "12"}
+                            borderRadius="full"
+                            boxShadow="1g"
+                            backgroundColor="transparent"
+                            boxSize="200px"
+                            position="absolute"
+                            zIndex={99}
+                        />
+                        <Circle bg="blue.100" opacity="0.7"
+                            w="200px" h="200px" alignItems="flex-end" m={'2'}
+                        />
+
                     </Box>
-                    
-                    
+
+
 
                 </Flex>
-                
+                <Flex alignSelf="center" pt='20'>
+                    <Link to="/blue">
+                        <Button >My projects</Button>
+                    </Link>
+                </Flex>
             </Stack>
-            
         </motion.div>
         // </AnimatePresence>
     )
