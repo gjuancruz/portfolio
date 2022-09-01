@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion'
 import styles from './Blue.module.css'
-import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image } from "@chakra-ui/react"
+import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image, useBoolean } from "@chakra-ui/react"
 import mooncinemaimg from '../assets/moon-cinema-0.jpg'
 import appetiteimg from '../assets/pi-foods-1.jpg'
 import weatherappimg from '../assets/weatherappimg.png'
 const Blue = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
-
+    const [flag, setFlag] = useBoolean()
     return (
         <motion.div
             key={1}
@@ -41,13 +41,15 @@ const Blue = () => {
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
                                 <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> Moon Cinema</Text>
                             </Flex>
-                            <Image
+                            <Image 
+                                borderRadius='20px'
+                                onMouseEnter={setFlag.on} onMouseLeave={setFlag.off}
                                 src={mooncinemaimg}
                                 alignSelf="center"
                             />
                         </TabPanel>
                         <TabPanel>
-                        <Flex justifyContent="center">
+                            <Flex justifyContent="center">
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
                                 <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> APPetite</Text>
                             </Flex>
@@ -57,7 +59,7 @@ const Blue = () => {
                             />
                         </TabPanel>
                         <TabPanel>
-                        <Flex justifyContent="center">
+                            <Flex justifyContent="center">
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
                                 <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> Weather App</Text>
                             </Flex>
