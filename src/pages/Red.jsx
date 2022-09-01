@@ -1,8 +1,12 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from "react-router-dom";
+
 import styles from './Landing.module.css'
-import { Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack } from "@chakra-ui/react"
+import {
+    Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink,
+} from "@chakra-ui/react"
+import { PhoneIcon, AtSignIcon, AttachmentIcon } from '@chakra-ui/icons'
 import image from '../assets/100711443.jpg'
 
 const Red = () => {
@@ -17,30 +21,28 @@ const Red = () => {
 
         >
 
-            <Stack>
-
+            <Stack >
+                <Flex alignSelf="center" p='10'>
+                    <Link to="/blue">
+                        <Button colorScheme='twitter' variant='solid'>My projects</Button>
+                    </Link>
+                </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
-                    spacing="200px" p={isNotSmallerScreen ? "32" : "0"}
-                    alignSelf="flex-start">
-                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="flex-start">
-                        <Text fontSize='5xl' fontWeigth='semibold'>Hey there! I'm</Text>
+                    spacing="200px" 
+                    alignSelf="center">
+                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="center">
+                        <Text fontSize='5xl' fontWeigth='semibold'>Let's get</Text>
 
 
-                        <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
+                        <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">in touch!</Text>
 
 
-                        <Text color='gray.500'>Full Stack Web Developer</Text>
-                        <Button >Hire me</Button>
-                        {/* <Link to='/blue'>
-                            <button>blue</button>
-                        </Link>
-                        <Link to='/red'>
-                            <button>red</button>
-                        </Link> */}
+                        <Text color='gray.500'>I'd be glad to hear from you. Don't hesitate!</Text>
+                        
                     </Box>
 
-                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "32" : '0'}>
-                        <Image
+                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "16" : '0'}>
+                        {/* <Image
                             src={image}
                             alignSelf="center"
                             mb={isNotSmallerScreen ? "0" : "12"}
@@ -53,21 +55,36 @@ const Red = () => {
                         />
                         <Circle bg="blue.100" opacity="0.7"
                             w="200px" h="200px" alignItems="flex-end" m={'2'}
-                        />
+                        /> */}
+                        
+                        <List spacing={3} p={isNotSmallerScreen ? "16" : "0"}>
+                            <ListItem>
+                                <ListIcon as={PhoneIcon} color='#1DA1F2' />
+                                +5493875039513
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={AtSignIcon} color='#1DA1F2' />
+                                juancrgalaz@gmail.com
+                            </ListItem>
+                            <ListItem>
+                                <ListIcon as={AttachmentIcon} color='#1DA1F2' />
+                                <ChakraLink>https://github.com/gjuancruz</ChakraLink>
+                            </ListItem>
+                            {/* You can also use custom icons from react-icons */}
+                            <ListItem>
+                                <ListIcon as={AttachmentIcon} color='#1DA1F2' />
+                                <ChakraLink>https://www.linkedin.com/in/juan-cruz-galaz-fullstack/?locale=en_US</ChakraLink>
+                            </ListItem>
+                        </List>
 
                     </Box>
 
 
 
                 </Flex>
-                <Flex alignSelf="center" pt='20'>
-                    <Link to="/blue">
-                        <Button >My projects</Button>
-                    </Link>
-                </Flex>
             </Stack>
         </motion.div>
         // </AnimatePresence>
     )
-    }
+}
 export default Red;
