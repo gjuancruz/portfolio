@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from "react-router-dom";
 import styles from './Landing.module.css'
 import { Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, UnorderedList, ListItem, List, VStack } from "@chakra-ui/react"
-import image from '../assets/100711443.jpg'
+import image from '../assets/100711449.jpg'
 import csslogo from '../assets/csss.png'
 import jslogo from '../assets/js.png'
 import nodelogo from '../assets/node.png'
@@ -56,8 +56,8 @@ const Landing = () => {
                             position="absolute"
                             zIndex={99}
                         />
-                        <Circle bg="blue.100" opacity="0.7"
-                            w="200px" h="200px" alignItems="flex-end" m={'2'}
+                        <Circle bg="blue.300" opacity="0.4"
+                            w="200px" h="200px" alignItems="flex-end" m={'2'} 
                         />
 
                     </Box>
@@ -76,7 +76,7 @@ const Landing = () => {
             </Flex>
                 <Flex alignSelf="center" p='10'>
                     <Link to="/blue">
-                        <Button >My projects</Button>
+                        <Button colorScheme='twitter' variant='solid'>My projects</Button>
                     </Link>
                 </Flex>
             </Stack>

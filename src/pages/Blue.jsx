@@ -19,7 +19,7 @@ const Blue = () => {
             <Stack>
                 <Flex alignSelf='center'>
                     <Link to='/'>
-                        <Button>My bio</Button>
+                        <Button colorScheme='purple' variant='solid' >My bio</Button>
                     </Link>
                 </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
@@ -72,7 +72,7 @@ const Blue = () => {
                 </Tabs>
                 <Flex alignSelf='center'>
                     <Link to='/red'>
-                        <Button m='2'>Contact</Button>
+                        <Button colorScheme='purple' variant='solid' m='2'>Contact</Button>
                     </Link>
                 </Flex>
             </Stack>
