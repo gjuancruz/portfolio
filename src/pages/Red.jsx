@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 import styles from './Landing.module.css'
 import {
-    Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink,
+    Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink, Icon,
 } from "@chakra-ui/react"
-import { PhoneIcon, AtSignIcon, AttachmentIcon } from '@chakra-ui/icons'
+import { PhoneIcon, AtSignIcon, AttachmentIcon, DownloadIcon } from '@chakra-ui/icons'
 import image from '../assets/100711443.jpg'
+import pdfen from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER.pdf'
+import pdfes from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER (spanish).pdf'
 
 const Red = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
@@ -80,8 +82,13 @@ const Red = () => {
                     </Box>
 
 
-
                 </Flex>
+                <Box display='block'>
+                    <Text align='center' fontSize='3xl' fontWeigth='semibold' mb='3vh'>Download my CV!</Text>
+                    <Button float='left' ml='41vw'><a href={pdfen} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">English <Icon as={DownloadIcon} /></a></Button>
+                    <Button float='right' mr='41vw'><a href={pdfes} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">Spanish <Icon as={DownloadIcon} /></a></Button>
+
+                </Box>
             </Stack>
         </motion.div>
         // </AnimatePresence>

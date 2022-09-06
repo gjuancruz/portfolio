@@ -68,7 +68,7 @@ const Landing = () => {
                 <Flex flexDirection='row' alignItems="center" justifyContent="space-evenly">
                 
                     <Image src={jslogo} width='125px' className={styles.prueba}/>
-                    <Image src={csslogo} width='75px' className={styles.prueba}/>
+                    <Image src={csslogo} width='82.5px' className={styles.prueba}/>
                     <Image src={htmllogo} width='125px' className={styles.prueba}></Image>
                     <Image src={reactlogo} width='125px' className={styles.prueba}></Image>
                     <Image src={nodelogo} width='125px' className={styles.prueba}></Image>
