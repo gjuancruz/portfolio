@@ -27,8 +27,8 @@ const Landing = () => {
 
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
                     spacing="200px" p={isNotSmallerScreen ? "32" : "0"} mb={isNotSmallerScreen ? '-12vh' : "0"} ml={isNotSmallerScreen ? '10vw' : "0"}
-                    alignSelf="flex-start">
-                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="flex-start">
+                    align="center">
+                    <Box mt={isNotSmallerScreen ? "0" : "16"} align={isNotSmallerScreen ? "flex-start" : 'center'}>
                         <Text fontSize='5xl' fontWeigth='semibold'>Hey there! I'm </Text>
 
 
@@ -57,7 +57,7 @@ const Landing = () => {
                             zIndex={99}
                         />
                         <Circle bg="blue.300" opacity="0.4"
-                            w="200px" h="200px" alignItems="flex-end" m={'2'} 
+                            w="200px" h="200px" alignItems="flex-end" m={'2'}
                         />
 
                     </Box>
@@ -65,15 +65,29 @@ const Landing = () => {
 
 
                 </Flex>
-                <Flex flexDirection='row' alignItems="center" justifyContent="space-evenly">
-                
-                    <Image src={jslogo} width='125px' className={styles.prueba}/>
-                    <Image src={csslogo} width='82.5px' className={styles.prueba}/>
+                {isNotSmallerScreen ? <Flex flexDirection='row' alignItems="center" justifyContent="space-evenly">
+
+                    <Image src={jslogo} width='125px' className={styles.prueba} />
+                    <Image src={csslogo} width='82.5px' className={styles.prueba} />
                     <Image src={htmllogo} width='125px' className={styles.prueba}></Image>
                     <Image src={reactlogo} width='125px' className={styles.prueba}></Image>
                     <Image src={nodelogo} width='125px' className={styles.prueba}></Image>
                     <Image src={postgrelogo} width='125px' className={styles.prueba}></Image>
-            </Flex>
+                </Flex> :
+                    <Box>
+                        <Flex  justifyContent='center'>
+                            <Image src={jslogo} width='125px' className={styles.prueba} />
+                            <Image src={csslogo} width='100px' className={styles.prueba} />
+                            <Image src={htmllogo} width='125px' className={styles.prueba}></Image>
+                        </Flex>
+                        <Flex  justifyContent='center'>
+                            <Image src={reactlogo} width='125px' className={styles.prueba}></Image>
+                            <Image src={nodelogo} width='125px' className={styles.prueba}></Image>
+                            <Image src={postgrelogo} width='125px' className={styles.prueba}></Image>
+                        </Flex>
+
+                    </Box>
+                }
                 <Flex alignSelf="center" p='10'>
                     <Link to="/blue">
                         <Button colorScheme='twitter' variant='solid'>My projects</Button>
@@ -83,7 +97,7 @@ const Landing = () => {
             <Flex direction='row'>
 
             </Flex>
-            
+
         </motion.div>
 
     )
