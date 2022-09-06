@@ -24,7 +24,7 @@ const Red = () => {
         >
 
             <Stack >
-                <Flex alignSelf="center" p='10'>
+                <Flex alignSelf="center">
                     <Link to="/blue">
                         <Button colorScheme='twitter' variant='solid'>My projects</Button>
                     </Link>
@@ -85,8 +85,8 @@ const Red = () => {
                 </Flex>
                 <Box display='block'>
                     <Text align='center' fontSize='3xl' fontWeigth='semibold' mb='3vh'>Download my CV!</Text>
-                    <Button float='left' ml='41vw'><a href={pdfen} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">English <Icon as={DownloadIcon} /></a></Button>
-                    <Button float='right' mr='41vw'><a href={pdfes} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">Spanish <Icon as={DownloadIcon} /></a></Button>
+                    <Button float='left' ml={isNotSmallerScreen ? '41vw' : '15vw'}><a href={pdfen} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">English <Icon as={DownloadIcon} /></a></Button>
+                    <Button float='right' mr={isNotSmallerScreen ? '41vw' : '15vw'}><a href={pdfes} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">Spanish <Icon as={DownloadIcon} /></a></Button>
 
                 </Box>
             </Stack>
