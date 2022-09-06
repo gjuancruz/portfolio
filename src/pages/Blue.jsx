@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion'
 import styles from './Blue.module.css'
-import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image, useBoolean } from "@chakra-ui/react"
+import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image, useBoolean, VStack, HStack, Icon } from "@chakra-ui/react"
+import {ArrowForwardIcon, ArrowBackIcon} from '@chakra-ui/icons'
 import mooncinemaimg from '../assets/moon-cinema-0.jpg'
-import appetiteimg from '../assets/pi-foods-1.jpg'
+import appetiteimg from '../assets/pi-foods-0.jpg'
+import appetiteimg2 from '../assets/pi-foods-1.jpg'
+import appetiteimg3 from '../assets/pi-foods-3.jpg'
+
 import weatherappimg from '../assets/weatherappimg.png'
 const Blue = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
     const [flag, setFlag] = useBoolean()
+    const [imagecount, setImagecount] = useState(0)
     return (
         <motion.div
             key={1}
@@ -39,34 +44,45 @@ const Blue = () => {
                         <TabPanel>
                             <Flex justifyContent="center">
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
-                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> Moon Cinema</Text>
+                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text" mb='3vh'> Moon Cinema</Text>
                             </Flex>
-                            <Image 
-                                borderRadius='20px'
-                                onMouseEnter={setFlag.on} onMouseLeave={setFlag.off}
-                                src={mooncinemaimg}
-                                alignSelf="center"
-                            />
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/zadB0K5Brzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </TabPanel>
                         <TabPanel>
                             <Flex justifyContent="center">
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
-                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> APPetite</Text>
+                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text" mb='3vh'> APPetite</Text>
                             </Flex>
-                            <Image
-                                src={appetiteimg}
-                                alignSelf="center"
-                            />
+                            <HStack justifyContent='center'>
+                                {(imagecount === 0) && <Button disabled><Icon as={ArrowBackIcon} /></Button>}
+                                {(imagecount > 0) && <Button onClick={() => setImagecount(imagecount - 1)}><Icon as={ArrowBackIcon} /></Button>}
+                                <a target="_blank" href="https://pi-foods-seven.vercel.app/">
+                                <motion.img
+                                    src={((imagecount === 0) && appetiteimg) || ((imagecount === 1) && appetiteimg2) || ((imagecount === 2) && appetiteimg3)}
+                                    width="560" height="315"
+                                    key={imagecount}
+                                    initial={{ x: -10, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ type: "spring", stiffness: 75 }}
+                                />
+                                </a>
+                                {(imagecount < 2) && <Button onClick={() => setImagecount(imagecount + 1)}><Icon as={ArrowForwardIcon} /></Button>}
+                                {(imagecount === 2) && <Button disabled><Icon as={ArrowForwardIcon} /></Button>}
+                            </HStack>
                         </TabPanel>
                         <TabPanel>
                             <Flex justifyContent="center">
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
-                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> Weather App</Text>
+                                <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text" mb='3vh'> Weather App</Text>
                             </Flex>
+                            <a target="_blank" href="https://weather-app-gjuancruz.vercel.app/">
                             <Image
                                 src={weatherappimg}
                                 alignSelf="center"
+                                width="560"
+                                height="270"
                             />
+                            </a>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>

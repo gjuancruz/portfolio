@@ -14,13 +14,14 @@ const theme = extendTheme({
         color: 'black',
       },
       // styles for the `a`
-      a: {
-        color: 'black',
-        transition: 'transform .3s',
-        _hover: {
-          transform: 'scale(1.1)'
-        },
-      }
+      // a: {
+      //   color: 'black',
+      //   transition: 'transform .3s',
+      //   _hover: {
+      //     transform: 'scale(1.1)',
+      //   },
+      //   zIndex:'999'
+      // }
     },
   },
 })
