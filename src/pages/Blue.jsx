@@ -46,7 +46,7 @@ const Blue = () => {
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
                                 <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text" mb='3vh'> Moon Cinema</Text>
                             </Flex>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/zadB0K5Brzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width={isNotSmallerScreen? "560" : '360' } height={isNotSmallerScreen ? "315" : '315'} src="https://www.youtube.com/embed/zadB0K5Brzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </TabPanel>
                         <TabPanel>
                             <Flex justifyContent="center">
@@ -80,7 +80,7 @@ const Blue = () => {
                                 src={weatherappimg}
                                 alignSelf="center"
                                 width="560"
-                                height="270"
+                                height={isNotSmallerScreen ? "270" :'130'}
                             />
                             </a>
                         </TabPanel>
