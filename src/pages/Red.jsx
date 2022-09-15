@@ -6,7 +6,7 @@ import styles from './Landing.module.css'
 import {
     Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink, Icon, useDisclosure
 } from "@chakra-ui/react"
-import { PhoneIcon, AtSignIcon, AttachmentIcon, DownloadIcon } from '@chakra-ui/icons'
+import { PhoneIcon, AtSignIcon, AttachmentIcon, DownloadIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import image from '../assets/100711443.jpg'
 import pdfen from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER.pdf'
 import pdfes from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER (spanish).pdf'
@@ -27,7 +27,7 @@ const Red = () => {
             <Stack >
                 <Flex alignSelf="center">
                     <Link to="/blue">
-                        <Button colorScheme='twitter' variant='solid'>My projects</Button>
+                        <Button colorScheme='twitter' variant='solid'>My projects  <Icon as={ArrowUpIcon} /></Button>
                     </Link>
                 </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
@@ -76,7 +76,7 @@ const Red = () => {
                             {/* You can also use custom icons from react-icons */}
                             <ListItem>
                                 <ListIcon as={AttachmentIcon} color='#1DA1F2' />
-                                <ChakraLink>https://www.linkedin.com/in/juan-cruz-galaz-fullstack/?locale=en_US</ChakraLink>
+                                <ChakraLink>https://www.linkedin.com/in/juan-cruz-galaz-fullstack/</ChakraLink>
                             </ListItem>
                         </List>
 

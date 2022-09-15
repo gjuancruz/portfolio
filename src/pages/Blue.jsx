@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from 'framer-motion'
 import styles from './Blue.module.css'
 import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image, useBoolean, VStack, HStack, Icon } from "@chakra-ui/react"
-import {ArrowForwardIcon, ArrowBackIcon} from '@chakra-ui/icons'
+import {ArrowForwardIcon, ArrowBackIcon, ArrowUpIcon, ArrowDownIcon} from '@chakra-ui/icons'
 import mooncinemaimg from '../assets/moon-cinema-0.jpg'
 import appetiteimg from '../assets/pi-foods-0.jpg'
 import appetiteimg2 from '../assets/pi-foods-1.jpg'
@@ -24,7 +24,7 @@ const Blue = () => {
             <Stack>
                 <Flex alignSelf='center'>
                     <Link to='/'>
-                        <Button colorScheme='twitter' variant='solid' >My bio</Button>
+                        <Button colorScheme='twitter' variant='solid' >My bio  <Icon as={ArrowUpIcon} /></Button>
                     </Link>
                 </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
@@ -88,7 +88,7 @@ const Blue = () => {
                 </Tabs>
                 <Flex alignSelf='center'>
                     <Link to='/red'>
-                        <Button colorScheme='twitter' variant='solid' m='2'>Contact</Button>
+                        <Button colorScheme='twitter' variant='solid' m='2'>Contact  <Icon as={ArrowDownIcon} /></Button>
                     </Link>
                 </Flex>
             </Stack>

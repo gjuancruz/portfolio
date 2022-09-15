@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from "react-router-dom";
 import styles from './Landing.module.css'
-import { Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, UnorderedList, ListItem, List, VStack, useDisclosure } from "@chakra-ui/react"
+import { Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, UnorderedList, ListItem, List, VStack, useDisclosure, Icon } from "@chakra-ui/react"
 import {
     Modal,
     ModalOverlay,
@@ -12,6 +12,7 @@ import {
     ModalBody,
     ModalCloseButton,
 } from '@chakra-ui/react'
+import {ArrowForwardIcon, ArrowBackIcon, ArrowUpIcon, ArrowDownIcon} from '@chakra-ui/icons'
 import image from '../assets/100711449.jpg'
 import csslogo from '../assets/csss.png'
 import jslogo from '../assets/js.png'
@@ -121,7 +122,7 @@ const Landing = () => {
                 }
                 <Flex alignSelf="center" p='10'>
                     <Link to="/blue">
-                        <Button colorScheme='twitter' variant='solid'>My projects</Button>
+                        <Button colorScheme='twitter' variant='solid'>My projects  <Icon as={ArrowDownIcon} /></Button>
                     </Link>
                 </Flex>
             </Stack>
