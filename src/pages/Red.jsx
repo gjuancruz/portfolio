@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import styles from './Landing.module.css'
 import {
-    Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink, Icon,
+    Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink, Icon, useDisclosure
 } from "@chakra-ui/react"
 import { PhoneIcon, AtSignIcon, AttachmentIcon, DownloadIcon } from '@chakra-ui/icons'
 import image from '../assets/100711443.jpg'
@@ -13,6 +13,7 @@ import pdfes from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER (spanish).pdf'
 
 const Red = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
+    const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         // <AnimatePresence>
         <motion.div
