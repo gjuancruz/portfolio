@@ -44,6 +44,7 @@ const Landing = () => {
 
 
                         <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
+                        <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">JCG JCG JCG JCG JCG</Text>
 
 
                         <Text color='gray.500'>Full Stack Web Developer</Text>
