@@ -12,7 +12,7 @@ import {
     ModalBody,
     ModalCloseButton,
 } from '@chakra-ui/react'
-import {ArrowForwardIcon, ArrowBackIcon, ArrowUpIcon, ArrowDownIcon} from '@chakra-ui/icons'
+import {ArrowForwardIcon, ArrowBackIcon, ArrowUpIcon, ArrowDownIcon, InfoOutlineIcon} from '@chakra-ui/icons'
 import image from '../assets/100711449.jpg'
 import csslogo from '../assets/csss.png'
 import jslogo from '../assets/js.png'
@@ -47,7 +47,7 @@ const Landing = () => {
 
 
                         <Text color='gray.500'>Full Stack Web Developer</Text>
-                        <Button mt='5px'onClick={onOpen}>More about me</Button>
+                        <Button mt='5px'onClick={onOpen}>More about me <Icon as={InfoOutlineIcon}/></Button>
                         <Modal isOpen={isOpen} onClose={onClose}>
                             <ModalOverlay />
                             <ModalContent>
