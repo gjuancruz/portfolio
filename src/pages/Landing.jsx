@@ -61,7 +61,7 @@ const Landing = () => {
                                     👨‍💻 Passionate about technology since I was a little kid, I'm looking to achieve the pleasure of dedicating 100% on it.
                                     I'm someone who is motivated by new challenges, to keep on learning and improving day by day. I consider my leadership, communication and positive attitude remarkable skills.<br />
 
-                                    💪 My experience on IT area is based on the projects I made on Henry's bootcamp, with +700 hours of teoric and practic study through which I could develop habilities both technical (referred to software development) and soft (security, autonomy, productivity, teamworking).<br />
+                                    💪 My experience on IT area is based on the projects I made on Henry's bootcamp, with +700 hours of theoretical and practical study through which I could develop skills both technical (referred to software development) and soft (security, autonomy, productivity, teamworking).<br />
 
                                     🛠 Technologies and tools I dominate:<br />
                                     | JavaScript | React | Redux | TypeScript | HTML | CSS | Bootstrap | Node | Express | Prisma | PostgreSQL | Sequelize | Chakra UI | Framer Motion | Chatbots | Postman | Git | SCRUM Methodology |

@@ -7,7 +7,7 @@ import {
     Box, Flex, Image, Stack, Text, useMediaQuery, Circle, Button, HStack, List, ListItem, ListIcon, Link as ChakraLink, Icon, useDisclosure
 } from "@chakra-ui/react"
 import { PhoneIcon, AtSignIcon, AttachmentIcon, DownloadIcon, ArrowUpIcon } from '@chakra-ui/icons'
-import image from '../assets/100711443.jpg'
+import image from '../assets/footer-artwork.png'
 import pdfen from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER.pdf'
 import pdfes from '../assets/JUAN CRUZ GALAZ - CV - DEVELOPER (spanish).pdf'
 
@@ -31,7 +31,7 @@ const Red = () => {
                     </Link>
                 </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
-                    spacing="200px" 
+                    spacing="200px"
                     alignSelf="center">
                     <Box mt={isNotSmallerScreen ? "0" : "16"} align="center">
                         <Text fontSize='5xl' fontWeigth='semibold'>Let's get</Text>
@@ -41,7 +41,7 @@ const Red = () => {
 
 
                         <Text color='gray.500'>I'd be glad to hear from you. Don't hesitate!</Text>
-                        
+
                     </Box>
 
                     <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "16" : '0'}>
@@ -59,7 +59,7 @@ const Red = () => {
                         <Circle bg="blue.100" opacity="0.7"
                             w="200px" h="200px" alignItems="flex-end" m={'2'}
                         /> */}
-                        
+
                         <List spacing={3} p={isNotSmallerScreen ? "16" : "0"}>
                             <ListItem>
                                 <ListIcon as={PhoneIcon} color='#1DA1F2' />
@@ -90,6 +90,7 @@ const Red = () => {
                     <Button float='right' mr={isNotSmallerScreen ? '41vw' : '15vw'}><a href={pdfes} download="JUAN CRUZ GALAZ - CV - DEVELOPER.pdf">Spanish <Icon as={DownloadIcon} /></a></Button>
 
                 </Box>
+                <Image src={image}></Image>
             </Stack>
         </motion.div>
         // </AnimatePresence>
