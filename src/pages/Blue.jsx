@@ -5,9 +5,9 @@ import styles from './Blue.module.css'
 import { Box, Button, Flex, Stack, Text, useMediaQuery, Tabs, TabList, TabPanels, Tab, TabPanel, Image, useBoolean, VStack, HStack, Icon } from "@chakra-ui/react"
 import {ArrowForwardIcon, ArrowBackIcon, ArrowUpIcon, ArrowDownIcon} from '@chakra-ui/icons'
 import mooncinemaimg from '../assets/moon-cinema-0.jpg'
-import appetiteimg from '../assets/pi-foods-0.jpg'
-import appetiteimg2 from '../assets/pi-foods-1.jpg'
-import appetiteimg3 from '../assets/pi-foods-3.jpg'
+import appetiteimg from '../assets/pi-foods-0-min.jpg'
+import appetiteimg2 from '../assets/pi-foods-1-min.jpg'
+import appetiteimg3 from '../assets/pi-foods-3-min.jpg'
 
 import weatherappimg from '../assets/weatherappimg.png'
 const Blue = () => {
@@ -28,7 +28,7 @@ const Blue = () => {
                     </Link>
                 </Flex>
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
-                    spacing="200px" p={isNotSmallerScreen ? "6" : "0"}
+                    spacing="200px" p={isNotSmallerScreen ? "2" : "0"}
                     alignSelf="flex-start">
                     <Text fontSize='4xl' fontWeigth='semibold'>Check out my </Text>
                     <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text"> latest projects</Text>
