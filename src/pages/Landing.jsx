@@ -13,7 +13,7 @@ import {
     ModalCloseButton,
 } from '@chakra-ui/react'
 import {ArrowForwardIcon, ArrowBackIcon, ArrowUpIcon, ArrowDownIcon, InfoOutlineIcon} from '@chakra-ui/icons'
-import image from '../assets/100711449.jpg'
+import image from '../assets/profile.jpg'
 import csslogo from '../assets/csss.png'
 import jslogo from '../assets/js.png'
 import nodelogo from '../assets/node.png'
