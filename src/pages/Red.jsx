@@ -63,7 +63,7 @@ const Red = () => {
                         <List spacing={3} p={isNotSmallerScreen ? "16" : "0"}>
                             <ListItem>
                                 <ListIcon as={PhoneIcon} color='#1DA1F2' />
-                                +5493875039513
+                                +54 3875039513
                             </ListItem>
                             <ListItem>
                                 <ListIcon as={AtSignIcon} color='#1DA1F2' />
@@ -71,12 +71,12 @@ const Red = () => {
                             </ListItem>
                             <ListItem>
                                 <ListIcon as={AttachmentIcon} color='#1DA1F2' />
-                                <ChakraLink>https://github.com/gjuancruz</ChakraLink>
+                                <ChakraLink href='https://github.com/gjuancruz' isExternal>https://github.com/gjuancruz</ChakraLink>
                             </ListItem>
                             {/* You can also use custom icons from react-icons */}
                             <ListItem>
                                 <ListIcon as={AttachmentIcon} color='#1DA1F2' />
-                                <ChakraLink>https://www.linkedin.com/in/juan-cruz-galaz-fullstack/</ChakraLink>
+                                <ChakraLink href='https://www.linkedin.com/in/juan-cruz-galaz-fullstack/' isExternal>https://www.linkedin.com/in/juan-cruz-galaz-fullstack/</ChakraLink>
                             </ListItem>
                         </List>
 
