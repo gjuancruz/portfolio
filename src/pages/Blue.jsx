@@ -105,7 +105,7 @@ const Blue = () => {
                                                 Visit 
                                                 <Icon as={ExternalLinkIcon} />
                                             </ChakraLink>
-                                            <ChakraLink href='https://github.com/gjuancruz/PI-Foods' isExternal fontWeight={600} width={'100%'} color='white' borderLeft={'1px groove white'}>
+                                            <ChakraLink href='https://weather-app-gjuancruz.vercel.app/' isExternal fontWeight={600} width={'100%'} color='white' borderLeft={'1px groove white'}>
                                                 Repository 
                                                 <Icon as={ExternalLinkIcon} />
                                             </ChakraLink>
