@@ -40,7 +40,29 @@ const Landing = () => {
             transition={{ type: "spring", stiffness: 75 }}
 
         >
-
+            <nav style={{ backgroundColor: "transparent", display: "flex", gap: 4 }}>
+                <div
+                    className={styles.navb}
+                >
+                    <Link to="/">
+                        My bio
+                    </Link>
+                </div>
+                <div
+                    className={styles.navb}
+                >
+                    <Link to="/blue">
+                        My projects
+                    </Link>
+                </div>
+                <div
+                    className={styles.navb}
+                >
+                    <Link to="/red">
+                        Contact
+                    </Link>
+                </div>
+            </nav>
             <Stack>
 
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
@@ -49,7 +71,7 @@ const Landing = () => {
                     <Box mt={isNotSmallerScreen ? "0" : "16"} align={isNotSmallerScreen ? "flex-start" : 'center'}>
                         <Text fontSize='5xl' fontWeigth='semibold'>Hey there! I'm </Text>
                         <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
-                        <Text color='gray.500'>Full Stack Web Developer</Text>
+                        <Text color='gray.500'>Full Stack Developer</Text>
                         <Button mt='5px' onClick={onOpen}>More about me <Icon as={InfoOutlineIcon} /></Button>
                         <Modal isOpen={isOpen} onClose={onClose}>
                             <ModalOverlay />
@@ -102,16 +124,16 @@ const Landing = () => {
                 </Flex>
                 {isNotSmallerScreen ?
 
-                    <Marquee style={{height:'125px'}} gradient={false} speed={70}>
-                        <Image src={jslogo} style={{marginLeft:'100px'}} />
-                        <Image src={htmllogo} style={{marginLeft:'100px', height:'135px'}} />
-                        <Image src={csslogo} style={{marginLeft:'100px', height:'115px'}}></Image>
-                        <Image src={reactlogo} style={{marginLeft:'100px'}}></Image>
-                        <Image src={reduxlogo} style={{marginLeft:'100px'}}></Image>
-                        <Image src={nodelogo} style={{marginLeft:'100px'}} ></Image>
-                        <Image src={expresslogo} style={{marginLeft:'100px'}}></Image>
-                        <Image src={postgrelogo} style={{marginLeft:'100px'}}></Image>
-                        <Image src={sequelizelogo} style={{marginLeft:'100px', height:'110px'}}></Image>    
+                    <Marquee style={{ height: '125px' }} gradient={false} speed={70}>
+                        <Image src={jslogo} style={{ marginLeft: '100px' }} />
+                        <Image src={htmllogo} style={{ marginLeft: '100px', height: '135px' }} />
+                        <Image src={csslogo} style={{ marginLeft: '100px', height: '115px' }}></Image>
+                        <Image src={reactlogo} style={{ marginLeft: '100px' }}></Image>
+                        <Image src={reduxlogo} style={{ marginLeft: '100px' }}></Image>
+                        <Image src={nodelogo} style={{ marginLeft: '100px' }} ></Image>
+                        <Image src={expresslogo} style={{ marginLeft: '100px' }}></Image>
+                        <Image src={postgrelogo} style={{ marginLeft: '100px' }}></Image>
+                        <Image src={sequelizelogo} style={{ marginLeft: '100px', height: '110px' }}></Image>
                     </Marquee>
                     :
                     <Box>

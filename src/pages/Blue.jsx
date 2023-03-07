@@ -8,12 +8,24 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import appetiteimg from '../assets/pi-foods-0-min.jpg'
 import appetiteimg2 from '../assets/pi-foods-1-min.jpg'
 import appetiteimg3 from '../assets/pi-foods-3-min.jpg'
-
+import mooncinemaimg from '../assets/moon-cinema-0.jpg'
+import mooncinemaimg2 from '../assets/1659567067703.jpg'
+import mooncinemaimg3 from '../assets/1659567511395.jpg'
+import mooncinemaimg4 from '../assets/1659567584474.jpg'
 import weatherappimg from '../assets/weatherappimg.png'
+import weatherappimg2 from '../assets/weatherappimg2.png'
+
+
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 const Blue = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
     const [flag, setFlag] = useBoolean()
     const [imagecount, setImagecount] = useState(0)
+    const [imagecount2, setImagecount2] = useState(0)
+    const [moonCinemaImg, setmoonCinemaImg] = useState(`mooncinemaimg`)
+
     return (
         <motion.div
             key={1}
@@ -48,41 +60,67 @@ const Blue = () => {
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
                                 <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text" mb='3vh'> Moon Cinema</Text>
                             </Flex>
-                            <iframe width={isNotSmallerScreen ? "560" : '360'} height={isNotSmallerScreen ? "315" : '315'} src="https://www.youtube.com/embed/zadB0K5Brzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div className={styles.container}>
+                                    <Carousel showThumbs={false} showStatus={false} showArrows={false} autoPlay={true} stopOnHover={true} infiniteLoop={true}>
+                                        <div>
+                                            <img className={styles.image} src={mooncinemaimg} />
+                                        </div>
+                                        <div>
+                                            <img className={styles.image} src={mooncinemaimg2} />
+                                        </div>
+                                        <div>
+                                            <img className={styles.image} src={mooncinemaimg3} />
+                                        </div>
+                                        <div>
+                                            <img className={styles.image} src={mooncinemaimg4} />
+                                        </div>
+                                    </Carousel>
+                                    <div className={styles.middle} >
+                                        <p className={styles.text}>Moon Cinema is a cinema management web application able to provide services both to consumers (information searching, tickets and candys buying, profile management, etc) and administrators (users, movies, functions and sells moderation and administration). Developed with 7 Henry bootcamp colleagues.</p>
+                                        <HStack className={styles.columns}>
+                                            <ChakraLink href='https://moon-cinema-app.vercel.app/home' isExternal fontWeight={600} width={'100%'} color='white'>
+                                                Visit
+                                                <Icon as={ExternalLinkIcon} />
+                                            </ChakraLink>
+                                            <ChakraLink href='https://github.com/gjuancruz/PF' isExternal fontWeight={600} width={'100%'} color='white' borderLeft={'1px groove white'}>
+                                                Repository
+                                                <Icon as={ExternalLinkIcon} />
+                                            </ChakraLink>
+                                        </HStack>
+                                    </div>
+                                </div>
                         </TabPanel>
                         <TabPanel>
                             <Flex justifyContent="center">
                                 <Text fontSize='4xl' fontWeigth='semibold'>This is</Text>
                                 <Text fontSize='4xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text" mb='3vh'> APPetite</Text>
                             </Flex>
-                            <HStack justifyContent='center' >
-                                {(imagecount === 0) && <Button disabled><Icon as={ArrowBackIcon} /></Button>}
-                                {(imagecount > 0) && <Button onClick={() => setImagecount(imagecount - 1)}><Icon as={ArrowBackIcon} /></Button>}
-                                <div className={styles.container}>
-
-                                    <Image
-                                        src={((imagecount === 0) && appetiteimg) || ((imagecount === 1) && appetiteimg2) || ((imagecount === 2) && appetiteimg3)}
-                                        key={imagecount}
-                                        className={styles.image}
-                                    />
-
+                            <div className={styles.container}>
+                                    <Carousel showThumbs={false} showStatus={false} showArrows={false} autoPlay={true} stopOnHover={true} infiniteLoop={true}>
+                                        <div>
+                                            <img className={styles.image} src={appetiteimg} />
+                                        </div>
+                                        <div>
+                                            <img className={styles.image} src={appetiteimg2} />
+                                        </div>
+                                        <div>
+                                            <img className={styles.image} src={appetiteimg3} />
+                                        </div>
+                                    </Carousel>
                                     <div className={styles.middle} >
                                         <p className={styles.text}>APPetite is a web app able to search, filter, order and create recipes from various parameters.</p>
                                         <HStack className={styles.columns}>
                                             <ChakraLink href='https://pi-foods-seven.vercel.app/' isExternal fontWeight={600} width={'100%'} color='white'>
-                                                Visit 
+                                                Visit
                                                 <Icon as={ExternalLinkIcon} />
                                             </ChakraLink>
                                             <ChakraLink href='https://github.com/gjuancruz/PI-Foods' isExternal fontWeight={600} width={'100%'} color='white' borderLeft={'1px groove white'}>
-                                                Repository 
+                                                Repository
                                                 <Icon as={ExternalLinkIcon} />
                                             </ChakraLink>
                                         </HStack>
                                     </div>
                                 </div>
-                                {(imagecount < 2) && <Button onClick={() => setImagecount(imagecount + 1)}><Icon as={ArrowForwardIcon} /></Button>}
-                                {(imagecount === 2) && <Button disabled><Icon as={ArrowForwardIcon} /></Button>}
-                            </HStack>
                         </TabPanel>
                         <TabPanel>
                             <Flex justifyContent="center">
@@ -91,22 +129,23 @@ const Blue = () => {
                             </Flex>
                             <a target="_blank" href="https://weather-app-gjuancruz.vercel.app/">
                                 <div className={styles.container}>
-
-                                    <Image
-                                        src={weatherappimg}
-                                        alignSelf="center"
-                                        // height={isNotSmallerScreen ? "270" :'130'}
-                                        className={styles.image}
-                                    />
+                                <Carousel showThumbs={false} showStatus={false} showArrows={false} autoPlay={true} stopOnHover={true} infiniteLoop={true}>
+                                        <div>
+                                            <img className={styles.image} src={weatherappimg} />
+                                        </div>
+                                        <div>
+                                            <img className={styles.image} src={weatherappimg2} />
+                                        </div>
+                                    </Carousel>
                                     <div className={styles.middle}>
                                         <p className={styles.text}>Weather App consumes data from the Open Weather App API and renders cards with the weather of the desired cities</p>
                                         <HStack className={styles.columns}>
-                                            <ChakraLink href='https://pi-foods-seven.vercel.app/' isExternal fontWeight={600} width={'100%'} color='white'>
-                                                Visit 
+                                            <ChakraLink href='https://weather-app-gjuancruz.vercel.app/' isExternal fontWeight={600} width={'100%'} color='white'>
+                                                Visit
                                                 <Icon as={ExternalLinkIcon} />
                                             </ChakraLink>
-                                            <ChakraLink href='https://weather-app-gjuancruz.vercel.app/' isExternal fontWeight={600} width={'100%'} color='white' borderLeft={'1px groove white'}>
-                                                Repository 
+                                            <ChakraLink href='https://github.com/gjuancruz/weather-app' isExternal fontWeight={600} width={'100%'} color='white' borderLeft={'1px groove white'}>
+                                                Repository
                                                 <Icon as={ExternalLinkIcon} />
                                             </ChakraLink>
                                         </HStack>

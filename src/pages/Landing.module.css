@@ -1,9 +1,21 @@
-.container{
-    width:100vh
+
+
+.navb {
+    font-weight: 600;
+    color: grey;
+    text-decoration: "none";
+    margin-top: 4px;
+    padding: 4px 16px;
+    transition: .5s;
+    
 }
-.prueba{
-    transition: transform .2s;
-}
-.prueba:hover{
-    transform: scale(1.5);
+
+.navb:hover{
+    font-weight: 600;
+    font-size: 18px;
+    color: #3ebcf9;
+    text-decoration: "none";
+    margin-top: 4px;
+    padding: 4px 8px;
+    transition: .5s;
 }
