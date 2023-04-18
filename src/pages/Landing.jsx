@@ -31,43 +31,30 @@ import Marquee from "react-fast-marquee";
 const Landing = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const handleProx = (event) =>{
+        console.log(event)
+        event.preventDefault()
+        window.scrollTo({ top: 1350, behavior: 'smooth' })
+      }
     return (
         // <AnimatePresence>
-        <motion.div
+        <>
+            {/* <motion.div
             key={2}
             initial={{ y: -1000, opacity: 0 }}
             animate={{ y: 10, opacity: 1 }}
             transition={{ type: "spring", stiffness: 75 }}
-
-        >
-            <nav style={{ backgroundColor: "transparent", display: "flex", gap: 4 }}>
-                <div
-                    className={styles.navb}
-                >
-                    <Link to="/">
-                        My bio
-                    </Link>
-                </div>
-                <div
-                    className={styles.navb}
-                >
-                    <Link to="/blue">
-                        My projects
-                    </Link>
-                </div>
-                <div
-                    className={styles.navb}
-                >
-                    <Link to="/red">
-                        Contact
-                    </Link>
-                </div>
-            </nav>
-            <Stack>
+            style={{height:'100%'}}
+        > */}
+            <Stack style={isNotSmallerScreen ? { height: '100vh' } : { height: '100%', paddingBottom:'10%' }}>
 
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
-                    spacing="200px" p={isNotSmallerScreen ? "32" : "0"} pt={isNotSmallerScreen ? "64px" : "0"} mb={isNotSmallerScreen ? '-12vh' : "0"} ml={isNotSmallerScreen ? '10vw' : "0"}
-                    align="center">
+                    spacing="200px"
+                    p={isNotSmallerScreen ? "32" : "0"}
+                    pt={isNotSmallerScreen ? "64px" : "0"}
+                    mb={isNotSmallerScreen ? '-12vh' : "0"}
+                    justifyContent='center'
+                >
                     <Box mt={isNotSmallerScreen ? "0" : "16"} align={isNotSmallerScreen ? "flex-start" : 'center'}>
                         <Text fontSize='5xl' fontWeigth='semibold'>Hey there! I'm </Text>
                         <Text fontSize='7xl' fontWeight="bold" bgGradient="linear(to-r, cyan.400, blue.500, purple.600)" bgClip="text">Juan Cruz Galaz</Text>
@@ -79,17 +66,11 @@ const Landing = () => {
                                 <ModalHeader>This is me!</ModalHeader>
                                 <ModalCloseButton />
                                 <ModalBody>
-                                    Hey there! 👋<br />
+                                    <p>Hey there! 👋</p>
+                                    <p>👤 My name is Juan Cruz Galaz, Full Stack Developer graduated from Henry's bootcamp.</p>
+                                    <p>👨‍💻 Passionate about technology since I was a little kid, I've achieved the pleasure of dedicating 100% on it.</p>
+                                    <p>🧠 I'm someone who is motivated by new challenges, to keep on learning and improving day by day. I consider my leadership, communication and positive attitude remarkable skills.</p>
 
-                                    👤 My name is Juan Cruz Galaz, Full Stack Web Developer recently graduated from Henry's bootcamp.<br />
-
-                                    👨‍💻 Passionate about technology since I was a little kid, I'm looking to achieve the pleasure of dedicating 100% on it.
-                                    I'm someone who is motivated by new challenges, to keep on learning and improving day by day. I consider my leadership, communication and positive attitude remarkable skills.<br />
-
-                                    💪 My experience on IT area is based on the projects I made on Henry's bootcamp, with +700 hours of theoretical and practical study through which I could develop skills both technical (referred to software development) and soft (security, autonomy, productivity, teamworking).<br />
-
-                                    🛠 Technologies and tools I dominate:<br />
-                                    | JavaScript | React | Redux | TypeScript | HTML | CSS | Bootstrap | Node | Express | Prisma | PostgreSQL | Sequelize | Chakra UI | Framer Motion | Chatbots | Postman | Git | SCRUM Methodology |
                                 </ModalBody>
 
                                 <ModalFooter>
@@ -101,7 +82,7 @@ const Landing = () => {
                         </Modal>
                     </Box>
 
-                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "32" : '0'}>
+                    <Box mt={isNotSmallerScreen ? "0" : "16"} align="center" pl={isNotSmallerScreen ? "32" : '16'}>
                         <Image
                             src={image}
                             alignSelf="center"
@@ -124,7 +105,7 @@ const Landing = () => {
                 </Flex>
                 {isNotSmallerScreen ?
 
-                    <Marquee style={{ height: '125px' }} gradient={false} speed={70}>
+                    <Marquee style={{ height: '125px', scroll: 'no', overflow: 'hidden' }} gradient={false} speed={70}>
                         <Image src={jslogo} style={{ marginLeft: '100px' }} />
                         <Image src={htmllogo} style={{ marginLeft: '100px', height: '135px' }} />
                         <Image src={csslogo} style={{ marginLeft: '100px', height: '115px' }}></Image>
@@ -150,18 +131,14 @@ const Landing = () => {
 
                     </Box>
                 }
-                <Flex alignSelf="center" p='10'>
+                {/* <Flex alignSelf="center"  p='10'>
                     <Link to="/blue">
-                        <Button colorScheme='twitter' variant='solid'>My projects  <Icon as={ArrowDownIcon} /></Button>
+                        <Button colorScheme='twitter' variant='solid' position={'fixed'} bottom={0}>My projects  <Icon as={ArrowDownIcon} /></Button>
                     </Link>
-                </Flex>
+                </Flex> */}
             </Stack>
-            <Flex direction='row'>
-
-            </Flex>
-
-        </motion.div>
-
+            {/* </motion.div> */}
+        </>
     )
 }
 export default Landing;
