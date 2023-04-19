@@ -123,14 +123,14 @@ const Landing = () => {
                     :
                     <Box>
                         <Flex justifyContent='center'>
-                            <Image src={jslogo} width='125px' className={styles.prueba} />
-                            <Image src={csslogo} width='100px' className={styles.prueba} />
-                            <Image src={htmllogo} width='125px' className={styles.prueba}></Image>
+                            <Image src={jslogo} width='100px' className={styles.prueba} />
+                            <Image src={csslogo} width='75px' className={styles.prueba} />
+                            <Image src={htmllogo} width='100px' className={styles.prueba}></Image>
                         </Flex>
                         <Flex justifyContent='center'>
-                            <Image src={reactlogo} width='125px' className={styles.prueba}></Image>
-                            <Image src={nodelogo} width='125px' className={styles.prueba}></Image>
-                            <Image src={postgrelogo} width='125px' className={styles.prueba}></Image>
+                            <Image src={reactlogo} width='100px' className={styles.prueba}></Image>
+                            <Image src={nodelogo} width='100px' className={styles.prueba}></Image>
+                            <Image src={postgrelogo} width='100px' className={styles.prueba}></Image>
                         </Flex>
 
                     </Box>
