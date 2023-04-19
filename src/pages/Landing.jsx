@@ -31,11 +31,11 @@ import Marquee from "react-fast-marquee";
 const Landing = () => {
     const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)')
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const handleProx = (event) =>{
+    const handleProx = (event) => {
         console.log(event)
         event.preventDefault()
         window.scrollTo({ top: 1350, behavior: 'smooth' })
-      }
+    }
     return (
         // <AnimatePresence>
         <>
@@ -46,7 +46,10 @@ const Landing = () => {
             transition={{ type: "spring", stiffness: 75 }}
             style={{height:'100%'}}
         > */}
-            <Stack style={isNotSmallerScreen ? { height: '100vh' } : { height: '100%', paddingBottom:'10%' }}>
+            <Stack style={isNotSmallerScreen ? { height: '100vh' } : { height: '100%', paddingBottom: '10%' }}
+            direction={'column'}
+            justify={'space-evenly'}
+            >
 
                 <Flex direction={isNotSmallerScreen ? "row" : "column"}
                     spacing="200px"
@@ -104,18 +107,19 @@ const Landing = () => {
 
                 </Flex>
                 {isNotSmallerScreen ?
-
-                    <Marquee style={{ height: '125px', scroll: 'no', overflow: 'hidden' }} gradient={false} speed={70}>
-                        <Image src={jslogo} style={{ marginLeft: '100px' }} />
-                        <Image src={htmllogo} style={{ marginLeft: '100px', height: '135px' }} />
-                        <Image src={csslogo} style={{ marginLeft: '100px', height: '115px' }}></Image>
-                        <Image src={reactlogo} style={{ marginLeft: '100px' }}></Image>
-                        <Image src={reduxlogo} style={{ marginLeft: '100px' }}></Image>
-                        <Image src={nodelogo} style={{ marginLeft: '100px' }} ></Image>
-                        <Image src={expresslogo} style={{ marginLeft: '100px' }}></Image>
-                        <Image src={postgrelogo} style={{ marginLeft: '100px' }}></Image>
-                        <Image src={sequelizelogo} style={{ marginLeft: '100px', height: '110px' }}></Image>
-                    </Marquee>
+                    <Flex>
+                        <Marquee style={{ height: '125px', scroll: 'no', overflow: 'hidden' }} gradient={false} speed={70}>
+                            <Image src={jslogo} style={{ marginLeft: '100px' }} />
+                            <Image src={htmllogo} style={{ marginLeft: '100px', height: '135px' }} />
+                            <Image src={csslogo} style={{ marginLeft: '100px', height: '115px' }}></Image>
+                            <Image src={reactlogo} style={{ marginLeft: '100px' }}></Image>
+                            <Image src={reduxlogo} style={{ marginLeft: '100px' }}></Image>
+                            <Image src={nodelogo} style={{ marginLeft: '100px' }} ></Image>
+                            <Image src={expresslogo} style={{ marginLeft: '100px' }}></Image>
+                            <Image src={postgrelogo} style={{ marginLeft: '100px' }}></Image>
+                            <Image src={sequelizelogo} style={{ marginLeft: '100px', height: '110px' }}></Image>
+                        </Marquee>
+                    </Flex>
                     :
                     <Box>
                         <Flex justifyContent='center'>
